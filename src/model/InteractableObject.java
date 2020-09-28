@@ -23,8 +23,8 @@ public abstract class InteractableObject {
 	public abstract void draw(PImage[] images);
 	public abstract void action();
 	public abstract void indicator();
-	public abstract void parallax();
-	
+	public abstract void parallaxLeft(int bgPosX);
+	public abstract void parallaxRight(int bgPosX);
 	
 	
 	

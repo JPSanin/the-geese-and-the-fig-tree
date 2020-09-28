@@ -13,6 +13,7 @@ public class Controller{
 	private PImage[] treeVine;
 	private PImage[] youngGooseImg;
 	private PImage[] oldGooseImg;
+	private PImage[] hunterImg;
 	
 	
 	public Controller(PApplet app, PImage[] images) {
@@ -21,6 +22,7 @@ public class Controller{
 		elements[0]= new Vine(55, 55, 608, 504, app);
 		elements[1]= new YoungGoose(523, 452, 127, 141, app);
 		elements[2]= new OldGoose(600, 440, 127, 141, app);
+		elements[3]= new Hunter(945, 438, 155, 163, app);
 		bg=new MountainsBackground(0, 0, 1200, 600,app);
 		sceneCounter=1;
 		this.images= images;
@@ -36,6 +38,14 @@ public class Controller{
 		oldGooseImg=new PImage[2];
 		oldGooseImg[0]=images[8];
 		oldGooseImg[1]=images[9];
+		hunterImg=new PImage[7];
+		hunterImg[0]=images[10];
+		hunterImg[1]=images[11];
+		hunterImg[2]=images[12];
+		hunterImg[3]=images[13];
+		hunterImg[4]=images[14];
+		hunterImg[5]=images[15];
+		hunterImg[6]=images[16];
 	}
 	
 	
@@ -44,13 +54,19 @@ public class Controller{
 		elements[0].draw(treeVine);
 		elements[1].draw(youngGooseImg);
 		elements[2].draw(oldGooseImg);
+		elements[3].draw(hunterImg);
 		
 	}
 	
 	private void scene2() {
 		bg.parallaxLeft();
-		bg.draw(images[10]);
-		
+		elements[0].parallaxLeft(bg.getPosX());
+		elements[3].parallaxLeft(bg.getPosX());
+		bg.draw(images[0]);
+		elements[0].draw(treeVine);
+		elements[1].draw(youngGooseImg);
+		elements[2].draw(oldGooseImg);
+		elements[3].draw(hunterImg);
 		
 	}
 	

@@ -28,8 +28,15 @@ public class OldGoose extends InteractableObject{
 		
 	}
 
+
 	@Override
-	public void parallax() {
+	public void parallaxLeft(int bgPosX) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void parallaxRight(int bgPosX) {
 		// TODO Auto-generated method stub
 		
 	}

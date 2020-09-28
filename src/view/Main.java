@@ -7,7 +7,6 @@ import processing.core.PImage;
 public class Main extends PApplet {
 	private Controller controller;
 	private int screen;
-	
 	private PImage[] images;
 	private PImage[] startScreen;
 	private PImage[] endScreen;
@@ -23,7 +22,7 @@ public class Main extends PApplet {
 
 	public void setup() {
 		
-		images= new PImage[11];
+		images= new PImage[18];
 		images[0]=loadImage("images/Background.png");
 		images[1]=loadImage("images/tree1.png");
 		images[2]=loadImage("images/tree2.png");
@@ -34,10 +33,18 @@ public class Main extends PApplet {
 		images[7]=loadImage("images/YoungGooseBright.png");
 		images[8]=loadImage("images/OldGoose.png");
 		images[9]=loadImage("images/OldGooseBright.png");
-		images[10]=loadImage("images/initial-template.png");
+		images[10]=loadImage("images/HunterCrouch.png");
+		images[11]=loadImage("images/HunterCrouchBright.png");
+		images[12]=loadImage("images/HunterStandLeft.png");
+		images[13]=loadImage("images/HunterStandLeftBright.png");
+		images[14]=loadImage("images/HunterStandBagBright.png");
+		images[15]=loadImage("images/HunterStandRight.png");
+		images[16]=loadImage("images/Bush.png");
+		images[17]=loadImage("images/initial-template.png");
 		controller=new Controller(this,images);
 		screen=2;
 		
+	
 		
 		startScreen= new PImage[2];
 		startScreen[0]=loadImage("images/Start1.png");
@@ -58,6 +65,7 @@ public class Main extends PApplet {
 			break;
 		case 2:
 			controller.start();
+			
 			break;
 		case 3:
 			image(endScreen[0],0,0,800,600);

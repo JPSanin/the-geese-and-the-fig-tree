@@ -29,7 +29,18 @@ public class Vine extends InteractableObject{
 	}
 
 	@Override
-	public void parallax() {
+	public void parallaxLeft(int bgPosX) {
+		int m;
+		m=super.getPosX()-2;
+		super.setPosX(m);
+		if(bgPosX<=-400) {
+			super.setPosX(-345);
+		}
+		
+	}
+
+	@Override
+	public void parallaxRight(int bgPosX) {
 		// TODO Auto-generated method stub
 		
 	}
