@@ -23,7 +23,7 @@ public class MountainsBackground {
 	}
 	
 	public void draw(PImage image) {
-		
+		app.image(image, posX, posY, sizeX,sizeY);
 	}
 
 	public int getPosX() {

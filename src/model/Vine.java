@@ -7,12 +7,12 @@ public class Vine extends InteractableObject{
 
 	public Vine(int posX, int posY, int sizeX, int sizeY, PApplet app) {
 		super(posX, posY, sizeX, sizeY, app);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public void draw(PImage[] images) {
-		// TODO Auto-generated method stub
+		getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
 		
 	}
 
