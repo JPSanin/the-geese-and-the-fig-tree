@@ -12,7 +12,7 @@ public class OldGoose extends InteractableObject{
 
 	@Override
 	public void draw(PImage[] images) {
-		// TODO Auto-generated method stub
+		getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
 		
 	}
 

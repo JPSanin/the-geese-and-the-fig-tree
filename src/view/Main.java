@@ -23,16 +23,20 @@ public class Main extends PApplet {
 
 	public void setup() {
 		
-		images= new PImage[7];
+		images= new PImage[11];
 		images[0]=loadImage("images/Background.png");
 		images[1]=loadImage("images/tree1.png");
 		images[2]=loadImage("images/tree2.png");
 		images[3]=loadImage("images/tree3.png");
 		images[4]=loadImage("images/tree4.png");
 		images[5]=loadImage("images/treeBright.png");
-		images[6]=loadImage("images/initial-template.png");
+		images[6]=loadImage("images/YoungGoose.png");
+		images[7]=loadImage("images/YoungGooseBright.png");
+		images[8]=loadImage("images/OldGoose.png");
+		images[9]=loadImage("images/OldGooseBright.png");
+		images[10]=loadImage("images/initial-template.png");
 		controller=new Controller(this,images);
-		screen=1;
+		screen=2;
 		
 		
 		startScreen= new PImage[2];

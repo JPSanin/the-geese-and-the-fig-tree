@@ -11,12 +11,16 @@ public class Controller{
 	private int sceneCounter;
 	private PImage[] images;
 	private PImage[] treeVine;
+	private PImage[] youngGooseImg;
+	private PImage[] oldGooseImg;
 	
 	
 	public Controller(PApplet app, PImage[] images) {
 		//Inicializar Objetos
 		elements=new InteractableObject[5];
-		elements[0]= new Vine(50, 15, 608, 544, app);
+		elements[0]= new Vine(55, 55, 608, 504, app);
+		elements[1]= new YoungGoose(523, 452, 127, 141, app);
+		elements[2]= new OldGoose(600, 440, 127, 141, app);
 		bg=new MountainsBackground(0, 0, 1200, 600,app);
 		sceneCounter=1;
 		this.images= images;
@@ -26,12 +30,21 @@ public class Controller{
 		treeVine[2]=images[3];
 		treeVine[3]=images[4];
 		treeVine[4]=images[5];
+		youngGooseImg=new PImage[2];
+		youngGooseImg[0]=images[6];
+		youngGooseImg[1]=images[7];
+		oldGooseImg=new PImage[2];
+		oldGooseImg[0]=images[8];
+		oldGooseImg[1]=images[9];
 	}
 	
 	
 	private void scene1() {
 		bg.draw(images[0]);
 		elements[0].draw(treeVine);
+		elements[1].draw(youngGooseImg);
+		elements[2].draw(oldGooseImg);
+		
 	}
 	/*private void scene2() {}
 	private void scene3() {}
