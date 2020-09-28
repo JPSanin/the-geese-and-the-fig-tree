@@ -46,7 +46,15 @@ public class Controller{
 		elements[2].draw(oldGooseImg);
 		
 	}
-	/*private void scene2() {}
+	
+	private void scene2() {
+		bg.parallaxLeft();
+		bg.draw(images[10]);
+		
+		
+	}
+	
+	/*
 	private void scene3() {}
 	private void scene4() {}
 	private void scene5() {}*/
@@ -56,7 +64,11 @@ public class Controller{
 		case 1:
 			scene1();
 			break;
+		case 2:
+			scene2();
+			break;
 		}
+		
 	}
 	
 

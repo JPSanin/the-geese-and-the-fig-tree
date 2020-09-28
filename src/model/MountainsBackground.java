@@ -18,7 +18,14 @@ public class MountainsBackground {
 		this.app = app;
 	}
 	
-	public void parallax() {
+	public void parallaxLeft() {
+		
+		this.posX-=2;
+		if(posX<=-400) {
+			posX=-400;
+		}
+		
+		
 		
 	}
 	

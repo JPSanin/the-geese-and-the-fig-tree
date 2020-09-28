@@ -81,7 +81,16 @@ public class Main extends PApplet {
 			}
 			break;
 		case 2:
-			screen=3;
+			switch(controller.getSceneCounter()) {
+			case 1:
+				controller.setSceneCounter(2);
+				break;
+			case 2:
+				screen=3;
+				break;
+				
+			}
+			
 			break;
 		case 3:
 			image(endScreen[0],0,0,800,600);
