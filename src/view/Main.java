@@ -91,7 +91,10 @@ public class Main extends PApplet {
 		case 2:
 			switch(controller.getSceneCounter()) {
 			case 1:
-				controller.setSceneCounter(2);
+				if (mouseX > 350 && mouseX < 390 && mouseY > 500 && mouseY < 520) {
+					controller.getElements()[0].setActions(1);
+				}
+				//controller.setSceneCounter(2);
 				break;
 			case 2:
 				screen=3;

@@ -9,6 +9,7 @@ public abstract class InteractableObject {
 	private int posY;
 	private int sizeX;
 	private int sizeY;
+	private int actions;
 	private PApplet app;
 	
 	public InteractableObject(int posX, int posY, int sizeX, int sizeY, PApplet app) {
@@ -17,6 +18,7 @@ public abstract class InteractableObject {
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
 		this.app = app;
+		actions=0;
 	}
 
 	
@@ -59,6 +61,17 @@ public abstract class InteractableObject {
 	public void setSizeY(int sizeY) {
 		this.sizeY = sizeY;
 	}
+
+	
+	public int getActions() {
+		return actions;
+	}
+
+
+	public void setActions(int actions) {
+		this.actions = actions;
+	}
+
 
 	public PApplet getApp() {
 		return app;

@@ -54,7 +54,6 @@ public class Controller{
 		elements[0].draw(treeVine);
 		elements[1].draw(youngGooseImg);
 		elements[2].draw(oldGooseImg);
-		elements[3].draw(hunterImg);
 		
 	}
 	
