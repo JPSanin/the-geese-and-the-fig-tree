@@ -118,6 +118,13 @@ public class Main extends PApplet {
 				
 				break;
 			case 2:
+				if (mouseX > 595 && mouseX < 645 && mouseY > 450 && mouseY < 540) {
+					controller.getElements()[3].setActions(1);
+					
+				}
+				break;
+				
+			case 3:
 				screen=3;
 				break;
 				

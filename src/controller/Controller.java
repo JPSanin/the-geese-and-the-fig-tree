@@ -69,11 +69,14 @@ public class Controller{
 	private void scene2() {
 		bg.parallaxLeft();
 		elements[0].parallaxLeft(bg.getPosX());
+		elements[1].parallaxLeft(bg.getPosX());
+		elements[2].parallaxLeft(bg.getPosX());
 		elements[3].parallaxLeft(bg.getPosX());
 		bg.draw(images[0]);
-		elements[0].draw(treeVine);
 		elements[1].draw(youngGooseImg);
 		elements[2].draw(oldGooseImg);
+		elements[0].draw(treeVine);
+		
 		elements[3].draw(hunterImg);
 		
 	}

@@ -4,10 +4,10 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 public class YoungGoose extends InteractableObject {
-
+	private int sleepingPosX;
 	public YoungGoose(int posX, int posY, int sizeX, int sizeY, PApplet app) {
 		super(posX, posY, sizeX, sizeY, app);
-		// TODO Auto-generated constructor stub
+		sleepingPosX=415;
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class YoungGoose extends InteractableObject {
 			}
 			break;
 		case 2:
-			getApp().image(images[2], 415, 60, getSizeX(),getSizeY());
+			getApp().image(images[2], sleepingPosX, 60, getSizeX(),getSizeY());
 			break;
 		}
 	}
@@ -45,7 +45,11 @@ public class YoungGoose extends InteractableObject {
 
 	@Override
 	public void parallaxLeft(int bgPosX) {
-		// TODO Auto-generated method stub
+		sleepingPosX-=2;
+		
+		if(bgPosX<=-400) {
+			sleepingPosX=15;
+		}
 		
 	}
 
