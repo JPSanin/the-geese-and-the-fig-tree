@@ -22,7 +22,7 @@ public class Main extends PApplet {
 
 	public void setup() {
 		
-		images= new PImage[22];
+		images= new PImage[23];
 		images[0]=loadImage("images/Background.png");
 		
 		images[1]=loadImage("images/tree1.png");
@@ -51,8 +51,8 @@ public class Main extends PApplet {
 		images[18]=loadImage("images/HunterStandBagBright.png");
 		images[19]=loadImage("images/HunterStandRight.png");
 		images[20]=loadImage("images/Bush.png");
-		
-		images[21]=loadImage("images/initial-template.png");
+		images[21]=loadImage("images/Net.png");
+		images[22]=loadImage("images/initial-template.png");
 		controller=new Controller(this,images);
 		screen=2;
 		
@@ -120,12 +120,17 @@ public class Main extends PApplet {
 			case 2:
 				if (mouseX > 595 && mouseX < 645 && mouseY > 450 && mouseY < 540) {
 					controller.getElements()[3].setActions(1);
-					
+					controller.getElements()[3].setActions(2);
+					controller.setSceneCounter(3);
 				}
+				
 				break;
 				
 			case 3:
-				screen=3;
+					if (mouseX > 570 && mouseX < 610 && mouseY > 450 && mouseY < 490) {
+					controller.getElements()[3].setActions(3);
+					controller.setSceneCounter(4);
+					}
 				break;
 				
 			}

@@ -14,6 +14,7 @@ public class Controller{
 	private PImage[] youngGooseImg;
 	private PImage[] oldGooseImg;
 	private PImage[] hunterImg;
+	private PImage[] netImg;
 	
 	
 	public Controller(PApplet app, PImage[] images) {
@@ -23,6 +24,7 @@ public class Controller{
 		elements[1]= new YoungGoose(523, 452, 127, 141, app);
 		elements[2]= new OldGoose(600, 440, 127, 141, app);
 		elements[3]= new Hunter(945, 438, 155, 163, app);
+		elements[4]=new Net(350, 250, 288, 195, app);
 		bg=new MountainsBackground(0, 0, 1200, 600,app);
 		sceneCounter=1;
 		this.images= images;
@@ -54,6 +56,10 @@ public class Controller{
 		hunterImg[4]=images[18];
 		hunterImg[5]=images[19];
 		hunterImg[6]=images[20];
+		
+		netImg= new PImage[1];
+		netImg[0]=images[21];
+		
 	}
 	
 	
@@ -76,14 +82,48 @@ public class Controller{
 		elements[1].draw(youngGooseImg);
 		elements[2].draw(oldGooseImg);
 		elements[0].draw(treeVine);
-		
 		elements[3].draw(hunterImg);
 		
 	}
 	
+	private void scene3() {
+		bg.parallaxRight();
+		elements[0].parallaxRight(bg.getPosX());
+		elements[1].parallaxRight(bg.getPosX());
+		elements[2].parallaxRight(bg.getPosX());
+		elements[3].parallaxRight(bg.getPosX());
+		bg.draw(images[0]);
+		elements[1].draw(youngGooseImg);
+		elements[2].draw(oldGooseImg);
+		elements[0].draw(treeVine);
+		elements[3].draw(hunterImg);
+	}
+	
+	private void scene4() {
+		bg.parallaxLeft();
+		elements[0].parallaxLeft(bg.getPosX());
+		elements[1].parallaxLeft(bg.getPosX());
+		elements[2].parallaxLeft(bg.getPosX());
+		elements[3].parallaxLeft(bg.getPosX());
+		elements[4].parallaxLeft(bg.getPosX());
+		bg.draw(images[0]);
+		elements[1].draw(youngGooseImg);
+		elements[2].draw(oldGooseImg);
+		elements[0].draw(treeVine);
+		elements[4].draw(netImg);
+		elements[3].draw(hunterImg);
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 	/*
-	private void scene3() {}
-	private void scene4() {}
+	
+	
 	private void scene5() {}*/
 	
 	public void start() {
@@ -94,9 +134,18 @@ public class Controller{
 		case 2:
 			scene2();
 			break;
+			
+		case 3:
+			scene3();
+			break;
+		case 4:
+			scene4();
+			break;
 		}
-		
+	
 	}
+		
+	
 	
 
 	public InteractableObject[] getElements() {

@@ -23,10 +23,15 @@ public class MountainsBackground {
 		this.posX-=2;
 		if(posX<=-400) {
 			posX=-400;
-		}
+		}	
+	}
+	
+	public void parallaxRight() {
 		
-		
-		
+		this.posX+=2;
+		if(posX>=0) {
+			posX=0;
+		}	
 	}
 	
 	public void draw(PImage image) {

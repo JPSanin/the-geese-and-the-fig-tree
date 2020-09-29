@@ -10,7 +10,7 @@ public class Hunter extends InteractableObject{
 	private int standingY;
 	private int standingWidth;
 	private int standingHeigth;
-	//image(bush,850,460,330,141);
+	
 	public Hunter(int posX, int posY, int sizeX, int sizeY, PApplet app) {
 		super(posX, posY, sizeX, sizeY, app);
 		this.bushX=850;
@@ -37,9 +37,20 @@ public class Hunter extends InteractableObject{
 			getApp().image(images[2], standingX,standingY,standingWidth,standingHeigth);
 			break;
 		case 2:
-			//getApp().image(images[3], getPosX(), getPosY(), getSizeX(),getSizeY());
+			if((getApp().millis()/1000)%2==0) {
+				getApp().image(images[4], standingX,standingY,standingWidth,standingHeigth);
+			}else {
+				getApp().image(images[2], standingX,standingY,standingWidth,standingHeigth);
+			}
+			break;
+		case 3:
+			getApp().image(images[5], standingX,standingY,standingWidth,standingHeigth);
+			break;
+		case 4:
+			getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
 			break;
 		}
+		
 		
 		getApp().image(images[6], bushX, bushY, 330,141);
 	}
@@ -62,10 +73,14 @@ public class Hunter extends InteractableObject{
 		m=super.getPosX()-2;
 		super.setPosX(m);
 		bushX-=2;
-		standingX-=2;
+		standingX+=1;
+		if(standingX>=550) {
+			standingX=550;
+			
+		}
 		if(bgPosX<=-400) {
 			super.setPosX(545);
-			standingX=545;
+			super.setActions(4);
 			bushX=450;
 		}
 		
@@ -73,8 +88,24 @@ public class Hunter extends InteractableObject{
 
 	@Override
 	public void parallaxRight(int bgPosX) {
-		// TODO Auto-generated method stub
+		int m;
+		m=super.getPosX()+2;
+		super.setPosX(m);
+		bushX+=2;
+		standingX-=1;
+		if(standingX<=500) {
+			standingX=500;
+		}
+		if(bgPosX>=0) {
+			super.setPosX(500);
+			
+			bushX=850;
+		}
 		
+	}
+
+	public int getStandingX() {
+		return standingX;
 	}
 
 	

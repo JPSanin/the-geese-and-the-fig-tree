@@ -12,7 +12,7 @@ public class Net extends InteractableObject {
 
 	@Override
 	public void draw(PImage[] images) {
-		// TODO Auto-generated method stub
+		getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
 		
 	}
 
@@ -30,8 +30,13 @@ public class Net extends InteractableObject {
 
 	@Override
 	public void parallaxLeft(int bgPosX) {
-		// TODO Auto-generated method stub
 		
+		int m;
+		m=super.getPosX()-2;
+		super.setPosX(m);
+		if(bgPosX<=-400) {
+			super.setPosX(-50);
+		}
 	}
 
 	@Override

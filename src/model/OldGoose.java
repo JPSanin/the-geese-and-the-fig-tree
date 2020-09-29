@@ -57,7 +57,11 @@ public class OldGoose extends InteractableObject{
 
 	@Override
 	public void parallaxRight(int bgPosX) {
-		// TODO Auto-generated method stub
+		sleepingPosX+=2;
+		
+		if(bgPosX>=0) {
+			sleepingPosX=445;
+		}
 		
 	}
 
