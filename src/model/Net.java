@@ -12,21 +12,18 @@ public class Net extends InteractableObject {
 
 	@Override
 	public void draw(PImage[] images) {
-		getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
+		switch(super.getActions()) {
+		case 0:
+			getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
+			break;
+		
+		}
 		
 	}
 
 	@Override
-	public void action() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void action() {}
 
-	@Override
-	public void indicator() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void parallaxLeft(int bgPosX) {

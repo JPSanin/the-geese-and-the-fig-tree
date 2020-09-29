@@ -43,15 +43,16 @@ public class YoungGoose extends InteractableObject {
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
+		int m;
+		m=super.getPosX()-2;
+		super.setPosX(m);
+		if(super.getPosX()<-100) {
+			super.setPosX(-200);
+		}
 		
 	}
 
-	@Override
-	public void indicator() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void parallaxLeft(int bgPosX) {

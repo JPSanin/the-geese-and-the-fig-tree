@@ -143,6 +143,18 @@ public class Controller{
 		
 	}
 	
+	private void scene7() {
+		bg.draw(images[0]);
+		elements[0].draw(treeVine);
+		elements[2].draw(oldGooseImg);
+		elements[1].draw(youngGooseImg);
+		elements[4].draw(netImg);
+		elements[3].draw(hunterImg);
+		elements[2].action();
+		elements[1].action();
+		elements[3].action();
+	}
+	
 	
 	/*
 	
@@ -169,6 +181,9 @@ public class Controller{
 			break;
 		case 6:
 			scene6();
+			break;
+		case 7:
+			scene7();
 			break;
 		}
 	

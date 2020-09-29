@@ -57,15 +57,15 @@ public class Hunter extends InteractableObject{
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
+		standingX+=1;
+		if(standingX>=850) {
+			standingX=900;
+			
+		}
 		
 	}
 
-	@Override
-	public void indicator() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void parallaxLeft(int bgPosX) {
