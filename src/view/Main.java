@@ -77,7 +77,9 @@ public class Main extends PApplet {
 			break;
 		case 2:
 			controller.start();
-			
+			if(controller.isFinished()==true) {
+				screen=3;
+			}
 			break;
 		case 3:
 			image(endScreen[0],0,0,800,600);

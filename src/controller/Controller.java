@@ -15,6 +15,7 @@ public class Controller{
 	private PImage[] oldGooseImg;
 	private PImage[] hunterImg;
 	private PImage[] netImg;
+	private boolean finished;
 	
 	
 	public Controller(PApplet app, PImage[] images) {
@@ -27,6 +28,7 @@ public class Controller{
 		elements[4]=new Net(350, 250, 288, 195, app);
 		bg=new MountainsBackground(0, 0, 1200, 600,app);
 		sceneCounter=1;
+		finished=false;
 		this.images= images;
 		
 		treeVine=new PImage[5];
@@ -153,6 +155,9 @@ public class Controller{
 		elements[2].action();
 		elements[1].action();
 		elements[3].action();
+		if(elements[1].getPosX()<=-200) {
+			sceneCounter=8;
+		}
 	}
 	
 	
@@ -185,6 +190,9 @@ public class Controller{
 		case 7:
 			scene7();
 			break;
+		case 8:
+			finished=true;
+			break;
 		}
 	
 	}
@@ -216,6 +224,11 @@ public class Controller{
 
 	public void setSceneCounter(int sceneCounter) {
 		this.sceneCounter = sceneCounter;
+	}
+
+
+	public boolean isFinished() {
+		return finished;
 	}
 
 
