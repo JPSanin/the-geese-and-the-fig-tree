@@ -22,25 +22,37 @@ public class Main extends PApplet {
 
 	public void setup() {
 		
-		images= new PImage[18];
+		images= new PImage[22];
 		images[0]=loadImage("images/Background.png");
+		
 		images[1]=loadImage("images/tree1.png");
 		images[2]=loadImage("images/tree2.png");
 		images[3]=loadImage("images/tree3.png");
 		images[4]=loadImage("images/tree4.png");
 		images[5]=loadImage("images/treeBright.png");
+		
 		images[6]=loadImage("images/YoungGoose.png");
 		images[7]=loadImage("images/YoungGooseBright.png");
-		images[8]=loadImage("images/OldGoose.png");
-		images[9]=loadImage("images/OldGooseBright.png");
-		images[10]=loadImage("images/HunterCrouch.png");
-		images[11]=loadImage("images/HunterCrouchBright.png");
-		images[12]=loadImage("images/HunterStandLeft.png");
-		images[13]=loadImage("images/HunterStandLeftBright.png");
-		images[14]=loadImage("images/HunterStandBagBright.png");
-		images[15]=loadImage("images/HunterStandRight.png");
-		images[16]=loadImage("images/Bush.png");
-		images[17]=loadImage("images/initial-template.png");
+		images[8]=loadImage("images/SleepingYoungGoose.png");
+		images[9]=loadImage("images/SleepingYoungGooseBright.png");
+		
+		
+		
+		images[10]=loadImage("images/OldGoose.png");
+		images[11]=loadImage("images/OldGooseBright.png");
+		images[12]=loadImage("images/SleepingOldGoose.png");
+		images[13]=loadImage("images/SleepingOldGooseBright.png");
+		
+		
+		images[14]=loadImage("images/HunterCrouch.png");
+		images[15]=loadImage("images/HunterCrouchBright.png");
+		images[16]=loadImage("images/HunterStandLeft.png");
+		images[17]=loadImage("images/HunterStandLeftBright.png");
+		images[18]=loadImage("images/HunterStandBagBright.png");
+		images[19]=loadImage("images/HunterStandRight.png");
+		images[20]=loadImage("images/Bush.png");
+		
+		images[21]=loadImage("images/initial-template.png");
 		controller=new Controller(this,images);
 		screen=2;
 		
@@ -93,8 +105,17 @@ public class Main extends PApplet {
 			case 1:
 				if (mouseX > 350 && mouseX < 390 && mouseY > 500 && mouseY < 520) {
 					controller.getElements()[0].setActions(1);
+					controller.getElements()[1].setActions(1);
 				}
-				//controller.setSceneCounter(2);
+				if (mouseX > 545 && mouseX < 625 && mouseY > 465 && mouseY < 575) {
+					controller.getElements()[1].setActions(2);
+					controller.getElements()[2].setActions(1);
+				}
+				if (mouseX > 620 && mouseX < 705 && mouseY > 455 && mouseY < 565) {
+					controller.getElements()[2].setActions(2);
+					controller.setSceneCounter(2);
+				}
+				
 				break;
 			case 2:
 				screen=3;

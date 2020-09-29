@@ -12,8 +12,23 @@ public class YoungGoose extends InteractableObject {
 
 	@Override
 	public void draw(PImage[] images) {
-		getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
 		
+		switch(super.getActions()) {
+		case 0:
+			getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
+			
+			break;
+		case 1:
+			if((getApp().millis()/1000)%2==0) {
+				getApp().image(images[1], getPosX(), getPosY(), getSizeX(),getSizeY());
+			}else {
+				getApp().image(images[0], getPosX(), getPosY(), getSizeX(),getSizeY());
+			}
+			break;
+		case 2:
+			getApp().image(images[2], 415, 60, getSizeX(),getSizeY());
+			break;
+		}
 	}
 
 	@Override
