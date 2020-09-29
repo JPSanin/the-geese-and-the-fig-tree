@@ -129,11 +129,31 @@ public class Main extends PApplet {
 			case 3:
 					if (mouseX > 570 && mouseX < 610 && mouseY > 450 && mouseY < 490) {
 					controller.getElements()[3].setActions(3);
+					controller.getElements()[1].setActions(3);
 					controller.setSceneCounter(4);
 					}
 				break;
+			case 4:
+				if (mouseX > 85 && mouseX < 115 && mouseY > 73 && mouseY <150) {
+					controller.setSceneCounter(5);
+					controller.getElements()[1].setActions(4);
+					controller.getElements()[2].setActions(3);
+					}
+				
+				break;
+			case 5:
+				if (mouseX >105 && mouseX < 145 && mouseY > 113 && mouseY <190) {
+					controller.setSceneCounter(6);
+					controller.getElements()[2].setActions(4);
+					controller.getElements()[3].setActions(1);
+					controller.getElements()[3].setActions(2);
+					}
+				
+				break;
 				
 			}
+			
+			
 			
 			break;
 		case 3:

@@ -80,7 +80,10 @@ public class Hunter extends InteractableObject{
 		}
 		if(bgPosX<=-400) {
 			super.setPosX(545);
-			super.setActions(4);
+			if(super.getActions()==3) {
+				super.setActions(4);
+			}
+			
 			bushX=450;
 		}
 		

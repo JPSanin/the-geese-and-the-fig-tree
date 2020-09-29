@@ -117,8 +117,31 @@ public class Controller{
 		
 	}
 	
+	private void scene5() {
+		bg.draw(images[0]);
+		elements[2].draw(oldGooseImg);
+		elements[0].draw(treeVine);
+		elements[1].draw(youngGooseImg);
+		elements[4].draw(netImg);
+		elements[3].draw(hunterImg);
+		
+	}
 	
-	
+	private void scene6() {
+		bg.parallaxRight();
+		elements[0].parallaxRight(bg.getPosX());
+		elements[1].parallaxRight(bg.getPosX());
+		elements[2].parallaxRight(bg.getPosX());
+		elements[3].parallaxRight(bg.getPosX());
+		elements[4].parallaxRight(bg.getPosX());
+		bg.draw(images[0]);
+		elements[0].draw(treeVine);
+		elements[2].draw(oldGooseImg);
+		elements[1].draw(youngGooseImg);
+		elements[4].draw(netImg);
+		elements[3].draw(hunterImg);
+		
+	}
 	
 	
 	/*
@@ -140,6 +163,12 @@ public class Controller{
 			break;
 		case 4:
 			scene4();
+			break;
+		case 5:
+			scene5();
+			break;
+		case 6:
+			scene6();
 			break;
 		}
 	

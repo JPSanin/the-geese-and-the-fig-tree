@@ -28,6 +28,16 @@ public class YoungGoose extends InteractableObject {
 		case 2:
 			getApp().image(images[2], sleepingPosX, 60, getSizeX(),getSizeY());
 			break;
+		case 3:
+			if((getApp().millis()/1000)%2==0) {
+				getApp().image(images[3], sleepingPosX, 60, getSizeX(),getSizeY());
+			}else {
+				getApp().image(images[2], sleepingPosX,60, getSizeX(),getSizeY());
+			}
+			break;
+		case 4:
+			getApp().image(images[2], sleepingPosX,300, getSizeX(),getSizeY());
+			break;
 		}
 	}
 
