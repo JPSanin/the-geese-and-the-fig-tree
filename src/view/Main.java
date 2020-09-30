@@ -1,5 +1,7 @@
 package view;
 
+
+
 import controller.Controller;
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -10,6 +12,7 @@ public class Main extends PApplet {
 	private PImage[] images;
 	private PImage[] startScreen;
 	private PImage[] endScreen;
+	private String[] story;
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
 
@@ -54,7 +57,7 @@ public class Main extends PApplet {
 		images[21]=loadImage("images/Net.png");
 		images[22]=loadImage("images/initial-template.png");
 		controller=new Controller(this,images);
-		screen=2;
+		screen=3;
 		
 	
 		
@@ -65,6 +68,7 @@ public class Main extends PApplet {
 		endScreen= new PImage[2];
 		endScreen[0]=loadImage("images/End1.png");
 		endScreen[1]=loadImage("images/End2.png");
+		story=loadStrings("data/Geese and The Fig Tree.txt");
 	}
 	
 	public void draw() {
@@ -169,9 +173,26 @@ public class Main extends PApplet {
 		case 3:
 			image(endScreen[0],0,0,800,600);
 			if (mouseX > 250 && mouseX < 550 && mouseY > 350 && mouseY < 415) {
+				editStory();
 				exit();
 			}
 			break;
 		}
+	}
+	
+	public void editStory() {
+		
+	
+		for(int i=0; i<story.length;i++) {
+			story[i]=story[i].replaceAll("Geese","GEESE");
+			story[i]=story[i].replaceAll("geese","GEESE");
+			story[i]=story[i].replaceAll("goose","GOOSE");
+			story[i]=story[i].replaceAll("old GOOSE","OLD GOOSE");
+			story[i]=story[i].replaceAll("vine","VINE");
+			story[i]=story[i].replaceAll("net","NET");
+			story[i]=story[i].replaceAll("hunter","HUNTER");
+			}
+		
+		saveStrings("data/EDITED Geese and The Fig Tree.txt", story);
 	}
 }
