@@ -57,7 +57,7 @@ public class Main extends PApplet {
 		images[21]=loadImage("images/Net.png");
 		images[22]=loadImage("images/initial-template.png");
 		controller=new Controller(this,images);
-		screen=3;
+		screen=1;
 		
 	
 		
@@ -93,8 +93,8 @@ public class Main extends PApplet {
 			break;
 			
 		}
-		fill(0);
-		text(mouseX+","+mouseY, mouseX, mouseY);
+		/*fill(0);
+		text(mouseX+","+mouseY, mouseX, mouseY);*/
 		
 	}
 	
